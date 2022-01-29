@@ -4,10 +4,6 @@ kubectl cluster-info
 kubectl get pods -n kube-system
 kubectl get pods -n kube-system -o wide
 
-Kubectl controls the Kubernetes Cluster. It is one of the key components of Kubernetes which runs on the workstation on any machine when the setup is done. It has the capability to manage the nodes in the cluster.
-
-Kubectl commands are used to interact and manage Kubernetes objects and the cluster. In this chapter, we will discuss a few commands used in Kubernetes via kubectl.
-
 kubectl annotate − It updates the annotation on a resource.
 
 $kubectl annotate [--overwrite] (-f FILENAME | TYPE NAME) KEY_1=VAL_1 ...
@@ -112,7 +108,9 @@ kubectl describe − Describes any particular resource in kubernetes. Shows deta
 
 $ kubectl describe <type> <type name>
 $ kubectl describe pod tomcat
-kubectl drain − This is used to drain a node for maintenance purpose. It prepares the node for maintenance. This will mark the node as unavailable so that it should not be assigned with a new container which will be created.
+kubectl drain − This is used to drain a node for maintenance purpose. It prepares the node for maintenance. 
+  
+This will mark the node as unavailable so that it should not be assigned with a new container which will be created.
 
 $ kubectl drain tomcat –force
 kubectl edit − It is used to end the resources on the server. This allows to directly edit a resource which one can receive via the command line tool.
@@ -124,7 +122,9 @@ kubectl exec − This helps to execute a command in the container.
 
 $ kubectl exec POD <-c CONTAINER > -- COMMAND < args...>
 $ kubectl exec tomcat 123-5-456 date
-kubectl expose − This is used to expose the Kubernetes objects such as pod, replication controller, and service as a new Kubernetes service. This has the capability to expose it via a running container or from a yaml file.
+  
+kubectl expose − This is used to expose the Kubernetes objects such as pod, replication controller, and service as a new Kubernetes service. 
+This has the capability to expose it via a running container or from a yaml file.
 
 $ kubectl expose (-f FILENAME | TYPE NAME) [--port=port] [--protocol = TCP|UDP]
 [--target-port = number-or-name] [--name = name] [--external-ip = external-ip-ofservice]
@@ -140,7 +140,8 @@ For example,
 
 $ kubectl get pod <pod name>
 $ kubectl get service <Service name>
-kubectl logs − They are used to get the logs of the container in a pod. Printing the logs can be defining the container name in the pod. If the POD has only one container there is no need to define its name.
+kubectl logs − They are used to get the logs of the container in a pod. 
+Printing the logs can be defining the container name in the pod. If the POD has only one container there is no need to define its name.
 
 $ kubectl logs [-f] [-p] POD [-c CONTAINER]
 Example
@@ -157,7 +158,8 @@ kubectl replace − Capable of replacing a resource by file name or stdin.
 $ kubectl replace -f FILENAME
 $ kubectl replace –f tomcat.yml
 $ cat tomcat.yml | kubectl replace –f -
-kubectl rolling-update − Performs a rolling update on a replication controller. Replaces the specified replication controller with a new replication controller by updating a POD at a time.
+kubectl rolling-update − Performs a rolling update on a replication controller.
+  Replaces the specified replication controller with a new replication controller by updating a POD at a time.
 
 $ kubectl rolling-update OLD_CONTROLLER_NAME ([NEW_CONTROLLER_NAME] --
 image = NEW_CONTAINER_IMAGE | -f NEW_CONTROLLER_SPEC)
