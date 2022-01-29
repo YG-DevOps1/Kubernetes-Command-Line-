@@ -2,14 +2,17 @@
 
 
 kubectl version
+
 kubectl version --short
+
 kubectl cluster-info
+
 kubectl get pods -n kube-system
+
 kubectl get pods -n kube-system -o wide
 
-
-
 $ kubectl api-version;
+
 kubectl apply − It has the capability to configure a resource by file or stdin.
 
 $ kubectl apply –f <filename>
