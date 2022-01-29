@@ -1,17 +1,13 @@
+
+
+
 kubectl version
 kubectl version --short
 kubectl cluster-info
 kubectl get pods -n kube-system
 kubectl get pods -n kube-system -o wide
 
-kubectl annotate − It updates the annotation on a resource.
 
-$kubectl annotate [--overwrite] (-f FILENAME | TYPE NAME) KEY_1=VAL_1 ...
-KEY_N = VAL_N [--resource-version = version]
-For example,
-
-kubectl annotate pods tomcat description = 'my frontend'
-kubectl api-versions − It prints the supported versions of API on the cluster.
 
 $ kubectl api-version;
 kubectl apply − It has the capability to configure a resource by file or stdin.
